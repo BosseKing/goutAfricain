@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GoûtAfricain</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+
+    <!-- Bibliotheques Stylesheet -->
+     <link rel="stylesheet" href="../lib/animate/animate.min.css">
+     <link rel="stylesheet" href="../lib/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!--  Bootstrap  -->
+   
+
+    <!--  css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style1.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles css/panier.css">
+    <style>
+        .active{
+            background: var(--primary) !important;
+            color: var(--light) !important;
+        }
+
+       .hidden{
+        display: none;
+       }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .alert-success {
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .progress {
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #e9ecef;
+        }
+
+        .progress-bar {
+            transition: width 0.5s ease;
+        }
+
+        /* Style spécifique pour la section de paiement */
+        #paiement-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #paiement-section h5 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Style pour les messages d'erreur */
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.active {
+            display: block;
+        }
+    </style>
+
+    
+</head>
+
+<body>
+    <div class="container-fluid bg-white p-0">
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><img src="../images/logo-removebg-preview.png" alt="Logo">GoûtAfricain</h1>
+                    
+                </a>
+
+                <div class="les-btn">
+                    <a  title="Mon panier" href="panier.html" class="btn-nav pani" id="open-panier"  ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
+                   
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Acceuil</a>
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <a href="reservation.html" class="nav-item nav-link">Réservation</a>
+                        <a href="commande.html" class="nav-item nav-link">Commandez en ligne</a>
+                        <a href="a_propos.html" class="nav-item nav-link">À propos</a>
+                    </div>
+                    <a href="#" title="Rechercher" class="btn-nav search" id="openSearchModal">
+                        <i class="bi bi-search" style="font-size: 24px;"></i>
+                    </a>
+                    <a href="connexion-inscription.html" title="Connexion" class="btn-nav login">
+                        <i class="bi bi-person" style="font-size: 26px;"></i>
+                    </a>
+                    <a href="mesFavoris.html" title="Favoris" class="btn-nav">
+                        <i class="bi bi-heart" style="font-size: 24px; margin-top: 6px;"></i>
+                    </a>
+                    <a  title="Mon panier" href="panier.html" class="btn-nav app active" id="open-panier" ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
+                </div>
+              
+            </nav>
+
+        </div>
+        <!-- Navbar & Hero End -->
+
+         <!-- Modal Bootstrap -->
+         <div class="modal fade search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="searchModalLabel">Rechercher sur <span class="section-title ff-secondary text-start text-primary fw-normal">GoûtAfricain</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="searchInput" placeholder="Tapez votre recherche...">
+                        <button class="btn-search" id="searchButton">Rechercher</button>
+                    </div>
+                    <div id="searchResults"></div>
+                </div>
+            </div>
+          </div>
+  
+
+          <main>
+            <div class="container mt-5">
+                <!-- Section de Commande -->
+                <section id="commande-section">
+                    <div class="card p-4 shadow">
+                        <form id="commande-form">
+                            <div class="mb-3">
+                                <label class="form-label">Adresse de Livraison</label>
+                                <input type="text" class="form-control" id="adresse" >
+                                <span class="error-message" id="adresse-error">Veuillez entrer une adresse valide.</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email ou Numéro de Téléphone</label>
+                                <input type="text" class="form-control" id="contact" >
+                                <span class="error-message" id="contact-error">Veuillez entrer un email ou un numéro de téléphone valide.</span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mode de Paiement</label>
+                                <select class="form-select" id="mode-paiement" required>
+                                    <option value="livraison">Paiement à la livraison</option>
+                                    <option value="carte">Carte Bancaire</option>
+                                </select>
+                            </div>
+                            <div id="paiement-section" class="hidden">
+                                <h5>Informations de paiement</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Numéro de Carte</label>
+                                    <input type="text" class="form-control" id="numero-carte" >
+                                    <span class="error-message" id="numero-carte-error">Le numéro de carte doit contenir 16 chiffres.</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Date d'expiration</label>
+                                    <input type="text" class="form-control" id="expiration" placeholder="MM/AA" >
+                                    <span class="error-message" id="expiration-error">La date d'expiration doit être au format MM/AA.</span>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" >
+                                    <span class="error-message" id="cvv-error">Le CVV doit contenir 3 chiffres.</span>
+                                </div>
+                            </div>
+                             <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#confirmModal">Valider la Commande</button>
+                             <button type="button" class="btn btn-danger w-100 mt-2" id="annulerCommande">Annuler la Commande</button>
+                        </form>
+                    </div>
+                </section>
+        
+                <!-- Section de Confirmation -->
+                <section id="confirmation-section" class="hidden mt-4">
+                    <div class="alert alert-success text-center">
+                        Commande confirmée ! Un email/SMS a été envoyé.
+                    </div>
+                    <button class="btn btn-secondary w-100" id="suivi-btn">Suivi de Commande</button>
+                </section>
+        
+                <!-- Section de Suivi de Commande -->
+                <section id="suivi-section" class="hidden mt-4">
+                    <h3 class="text-center">Suivi de votre commande</h3>
+                    <div class="progress mt-3">
+                        <div id="progress-bar" class="progress-bar bg-success" style="width: 0%">Préparation...</div>
+                    </div>
+                    <p class="text-center mt-3" id="etat-commande">Votre commande est en préparation...</p>
+                </section>
+
+                 <!-- Facture -->
+        <section id="factureSection" style="display: none;">
+            <h3 class="text-center">Facture</h3>
+            <div id="factureDetails"></div>
+            <button class="btn btn-primary" id="imprimerFacture">Imprimer</button>
+        </section>
+            </div>
+               
+          </main>
+
+           <!-- Modal de confirmation -->
+        <div class="modal fade" id="confirmModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">Êtes-vous sûr de vouloir valider votre commande ?</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-success" id="confirmerCommande">Oui, Valider</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        
+
+                <!-- Footer debut -->
+        <div class="container-fluid bg-dark text-light footer pt-5  wow fadeIn" data-wow-delay="0.1s">
+            <div class="container-fluid py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">GoûtAfricain</h4>
+                        <a class="btn btn-link" href="a_propos.html">À propos de nous</a>
+                        <a class="btn btn-link" href="contact.html">Contactez-nous</a>
+                        <a class="btn btn-link" href="reservation.html">Réservation</a>
+                        <a class="btn btn-link" href="politique_conditions.html#politique">Politique de confidentialité</a>
+                        <a class="btn btn-link" href="politique_conditions.html#conditions">Termes & Conditions</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Randa Bakwai, Zinder - Niger </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+227 96931275</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>GoûtAfricain@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Commentaire</h4>
+                        <p>Faites-nous part de vos avis ou propositions</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Commentaire">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Envoyer</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Instagram</h4>
+                            <div class="row g-3">
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/afrique.png" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/afrique.png" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/afrique1.webp" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/afrique1.webp" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/ve4.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/ve4.jpg" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/ve2.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/ve2.jpg" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/menu/plats_principaux/biryani.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/menu/plats_principaux/biryani.jpg" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/menu/entrées/saladeivoir.jpeg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/menu/entrées/saladeivoir.jpeg" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">GoûtAfricain</a>, Tous droits réservés.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="index.html">Accueil</a>
+                                <a href="#">Cookies</a>
+                                <a href="contact.html">Aide</a>
+                                <a href="#question">FAQ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer fin -->
+
+
+                <!-- Back to Top -->
+                <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!--  Javascript -->
+    <script src="../js/main.js"></script>
+    <script src="../scripts/connexion.js"></script>
+    <script src="../scripts/script1.js"></script>
+
+
+   <script>
+    $(document).ready(function () {
+            // Afficher/masquer la section de paiement par carte
+            $('#mode-paiement').change(function () {
+                if ($(this).val() === 'carte') {
+                    $('#paiement-section').removeClass('hidden').addClass('fade-in');
+                } else {
+                    $('#paiement-section').addClass('hidden');
+                }
+            });
+
+            // Validation du formulaire
+            $('#commande-form').submit(function (e) {
+                e.preventDefault();
+                let isValid = true;
+
+                // Réinitialiser les messages d'erreur
+                $('.error-message').removeClass('active');
+
+                // Validation de l'adresse
+                if ($('#adresse').val().trim() === '') {
+                    $('#adresse-error').addClass('active');
+                    isValid = false;
+                }
+
+                // Validation du contact
+                const contact = $('#contact').val().trim();
+                if (contact === '' || !(contact.includes('@') || /^\d+$/.test(contact))) {
+                    $('#contact-error').addClass('active');
+                    isValid = false;
+                }
+
+                // Validation du paiement par carte
+                if ($('#mode-paiement').val() === 'carte') {
+                    const numeroCarte = $('#numero-carte').val();
+                    const expiration = $('#expiration').val();
+                    const cvv = $('#cvv').val();
+
+                    if (!numeroCarte.match(/^\d{16}$/)) {
+                        $('#numero-carte-error').addClass('active');
+                        isValid = false;
+                    }
+                    if (!expiration.match(/^\d{2}\/\d{2}$/)) {
+                        $('#expiration-error').addClass('active');
+                        isValid = false;
+                    }
+                    if (!cvv.match(/^\d{3}$/)) {
+                        $('#cvv-error').addClass('active');
+                        isValid = false;
+                    }
+                }
+
+                $("#confirmerCommande").click(function () {
+                $("#commandeSection").hide();
+                $("#suiviSection").show();
+                var etapes = ["Préparation", "En Cuisine", "En Livraison", "Livrée"];
+                var etapeIndex = 0;
+                var interval = setInterval(function () {
+                    if (etapeIndex < etapes.length) {
+                        $("#etatCommande").css("width", (etapeIndex + 1) * 25 + "%").text(etapes[etapeIndex]);
+                        etapeIndex++;
+                    } else {
+                        clearInterval(interval);
+                        $("#suiviSection").hide();
+                        $("#factureSection").show();
+                        $("#factureDetails").html("<p>Commande Livrée ! Bon appétit !</p>");
+                    }
+                }, 2000);
+                $("#confirmModal").modal("hide");
+            });
+
+                // Si tout est valide, passer à la section de confirmation
+                if (isValid) {
+                    $('#commande-section').addClass('hidden');
+                    $('#confirmation-section').removeClass('hidden').addClass('fade-in');
+                }
+            });
+
+            // Suivi de commande
+            $('#suivi-btn').click(function () {
+                $('#confirmation-section').addClass('hidden');
+                $('#suivi-section').removeClass('hidden').addClass('fade-in');
+
+                // Simuler la progression de la commande
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 25;
+                    $('#progress-bar').css('width', progress + '%');
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        $('#etat-commande').text('Votre commande a été livrée ! Bon appétit !');
+                    }
+                }, 1000);
+            });
+
+            $("#annulerCommande").click(function () {
+                if (confirm("Êtes-vous sûr de vouloir annuler la commande ?")) {
+                    $("#commandeForm")[0].reset();
+                }
+            });
+    
+            $("#imprimerFacture").click(function () {
+                window.print();
+            });
+        });
+   </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GoûtAfricain || Menu</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <!-- Bibliotheques Stylesheet -->
+     <link rel="stylesheet" href="../lib/animate/animate.min.css">
+     <link rel="stylesheet" href="../lib/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
+
+    <!--  Bootstrap  -->
+   
+
+    <!--  css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style1.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid bg-white p-0">
+
+
+        <!-- Navbar debut -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><img src="../images/logo-removebg-preview.png" alt="Logo">GoûtAfricain</h1>
+                    
+                </a>
+
+                <div class="les-btn">
+                    <a  title="Mon panier" href="panier.html" class="btn-nav pani" id="open-panier"  ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
+                   
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link ">Acceuil</a>
+                        <a href="menu.html" class="nav-item nav-link active">Menu</a>
+                        <a href="reservation.html" class="nav-item nav-link">Réservation</a>
+                        <a href="commande.html" class="nav-item nav-link">Commandez en ligne</a>
+                        <a href="a_propos.html" class="nav-item nav-link">À propos</a>
+                    </div>
+                    <a href="#" title="Rechercher" class="btn-nav search" id="openSearchModal">
+                        <i class="bi bi-search" style="font-size: 24px;"></i>
+                    </a>
+                    <a href="connexion-inscription.html" title="Connexion" class="btn-nav login">
+                        <i class="bi bi-person" style="font-size: 26px;"></i>
+                    </a>
+                    <a href="mesFavoris.html" title="Favoris" class="btn-nav">
+                        <i class="bi bi-heart" style="font-size: 24px; margin-top: 6px;"></i>
+                    </a>
+                    <a  title="Mon panier" href="panier.html" class="btn-nav app" id="open-panier" ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
+                </div>
+              
+            </nav>
+            
+        </div>
+        <!-- Navbar fin -->
+
+         <!-- Modal Bootstrap -->
+         <div class="modal fade search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="searchModalLabel">Rechercher sur <span class="section-title ff-secondary text-start text-primary fw-normal">GoûtAfricain</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="searchInput" placeholder="Tapez votre recherche...">
+                        <button class="btn-search" id="searchButton">Rechercher</button>
+                    </div>
+                    <div id="searchResults"></div>
+                </div>
+            </div>
+          </div>
+  
+
+
+        <!-- Menu Start -->
+        <div class="container-xxl py-5">
+            <div class="container-xxl">
+                <div class="text-center menu-desc wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Menu</h5>
+                    <h1 class="mb-5 fs-2" >Découvrez les saveurs authentiques de l'Afrique</h1>
+                </div>
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+                   <div class="contenair-fluid">
+                    <div class="row">
+                        <ul class="nav nav-pills d-flex flex-nowrap  border-bottom mb-5 overflow-auto justify-content-md-center">
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                    <i class="fas fa-utensils fa-2x " style="color: #FF6347;"></i>  
+                                    <div class="ps-3">
+                                        <small class="text-body">Plats</small>
+                                        <h6 class="mt-n1 mb-0">principaux</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                                    <i class="fas fa-leaf fa-2x" style="color: #228B22;"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Plats</small>
+                                        <h6 class="mt-n1 mb-0">végétariens</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-3">
+                                    <i class="bi bi-signpost fa-2x" style="color: #FF6347;"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Entrées</small>
+                                        <h6 class="mt-n1 mb-0">Savoureuses</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-4">
+                                    <i class="fas fa-birthday-cake fa-2x" style="color: #FF69B4;"></i> 
+                                    <div class="ps-3">
+                                        <small class="text-body">Plaisir</small>
+                                        <h6 class="mt-n1 mb-0">Sucré</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-5">
+                                    <i class="fas fa-apple-alt fa-2x" style="color: rgb(44, 179, 44);"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Fruits</small>
+                                        <h6 class="mt-n1 mb-0">Rafraîchissant</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="d-flex align-items-center text-start mx-3  pb-3" data-bs-toggle="pill" href="#tab-6">
+                                    <i class="fas fa-cocktail fa-2x" style="color: #00BFFF;"></i>
+                                    <div class="ps-3">
+                                        <small class="text-body">Boissons</small>
+                                        <h6 class="mt-n1 mb-0">Fraîches</h6>
+                                    </div>
+                                </a>
+                            </li>
+            
+                        </ul>
+                    </div>
+                   </div>
+                    
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row g-4 plat">
+
+                                <!-- Plats principaux debut-->
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/poulet_yasa.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4 ">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Poulet Yassa (Sénégal) </span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Poulet mariné dans une sauce à base de citron, d'oignons et de moutarde, accompagné de riz</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/res3.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Thiéboudienne (Sénégal)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Riz accompagné de poisson, légumes et sauce tomate épicée, plat traditionnel sénégalais</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/mafe.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Mafé (Mali) </span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Viande de bœuf dans une sauce épicée à base d'arachide, accompagnée de riz</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/jollof.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Jollof Rice (Nigeria)</span>
+                                                <span class="text-primary">35dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Riz cuit dans une sauce tomate épicée, accompagné de viande ou de poisson</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/gaba.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Garba (Côte d'Ivoire)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Un plat ivoirien emblématique à base d’attiéké et de poisson frit, relevé avec des piments et des oignons pour une explosion de saveurs</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/cous.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Couscous aux légumes (Maroc) </span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Semoule de blé servie avec des légumes cuits dans une sauce savoureuse</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/biryani.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Biryani (Afrique de l'Est)</span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Riz épicé servi avec du poulet, de l'agneau ou des légumes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/ragout.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Ragoût de bœuf à l'africaine (Afrique de l'Ouest)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Ragoût de bœuf avec des légumes et des épices traditionnelles</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/fufu.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Fufu et sauce gombo (Cameroun)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Fufu servi avec une sauce épicée à base de gombo</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_principaux/riZPoi.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Riz au poisson (Nigeria)</span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Riz cuit avec des légumes et du poisson frit, dans une sauce épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Plats principaux fin -->
+
+                            
+                            <!-- Plats vegetariens debut -->
+                        </div>
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/legume.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Riz aux légumes (Sénégal)</span>
+                                                <span class="text-primary">22dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Riz cuit avec un assortiment de légumes de saison</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/yam.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Yam frit (Nigeria)</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Patates douces frites, servies avec une sauce épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/nedole.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Ndolé végétarien (Cameroun) </span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Feuilles de bitterleaf cuites avec des épices et des légumes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/taj.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Tajine de légumes (Maroc)</span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Mélange de légumes mijoté dans une sauce épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/cure.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Curry de légumes(Afrique de l'Est)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Légumes cuits dans une sauce crémeuse au lait de coco</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/eba.png" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Eba et sauce aux légumes (Nigeria) </span>
+                                                <span class="text-primary">20</span>
+                                            </h5>
+                                            <small class="fst-italic">Boulettes de manioc servies avec une sauce végétarienne épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/avocat.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Salade de mangue et avocat (Côte d'Ivoire)</span>
+                                                <span class="text-primary">18dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Mélange de mangue fraîche et d'avocat avec une vinaigrette légère</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/kocha.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Koshari (Égypte)</span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Mélange de lentilles, riz, pâtes et pois chiches, servi avec une sauce tomate épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/tuni.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Vegetarian couscous (Tunisie)</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Couscous accompagné de légumes de saison cuits dans un bouillon épicé</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/plats_vegetariens/banane.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Fried(Ouganda/Kenya)</span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic"> Bananes plantains frites servies avec un mélange de légumes épicés</small>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                            </div>
+                        </div>
+                        <!-- Plats vegetariens fin -->
+
+                        <!-- Entrées  debut -->
+                        <div id="tab-3" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/samosa.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;"">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Samosas (Afrique de l'Ouest) </span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Pâtisseries frites farcies avec un mélange de légumes ou de viande hachée épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/soupeivoir.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Soupe de poisson (Côte d'Ivoire)</span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Soupe épicée de poisson servie avec du riz ou du pain</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/accra.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Accara(Côte d'Ivoire)</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Beignets frits à base de haricots noirs, souvent servis avec une sauce pimentée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/brochette.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Brochettes de légumes (Cameroun) </span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Brochettes de légumes grillés, souvent accompagnées de sauce épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/tunisi.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Chakchouka (Tunisie)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Mélange d'œufs et de légumes cuits dans une sauce tomate épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/saladeivoir.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Salade de palme (Côte d'Ivoire)</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Salade à base de cœur de palmier, de légumes frais et de sauce épicée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/thon.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Tartare de thon à l'africaine (Afrique de l'Ouest) </span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Thon cru mariné dans une sauce épicée, servi avec des légumes frais</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/avocat.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Salade d'avocat et mangue (Afrique de l'Ouest) </span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Mélange d'avocat, de mangue et d'assaisonnements légers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/ober.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Caviar d'aubergine épicé (Maghreb) </span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Aubergines grillées écrasées avec de l'ail, du citron et des épices</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/falfal.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Falafel(Égypte)</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Boulettes frites de pois chiches ou fèves</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Entrées  fin -->
+
+                        <!-- dessert  debut -->
+                        <div id="tab-4" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/tarte.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Tarte à la noix de coco (Côte d'Ivoire) </span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Pâte sablée garnie d'une crème à la noix de coco sucrée</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/manioc.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Gâteau au manioc (Côte d'Ivoire)</span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Gâteau moelleux préparé avec de la farine de manioc.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/bacla.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Baklava (Afrique du Nord)</span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Pâtisserie feuilletée à base de noix et de miel</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/crepe.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Crêpes à la banane (Afrique de l'Ouest)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Crêpes servies avec des bananes caramélisées</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/mangue.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Panna cotta (Afrique de l'Est)</span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Crème à la vanille, nappée de purée de mangue</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/beignet.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Beignets africains (Afrique de l'Ouest)</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">De petits beignets moelleux et sucrés, parfumés à la vanille ou à la muscade, parfaits pour accompagner une boisson chaude</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/douce.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Gâteau à la patate douce (Afrique de l'Ouest) </span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Un gâteau fondant préparé avec de la purée de patate douce, parfumé à la cannelle et à la noix de muscade</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/makh.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Makroudh (Maghreb) </span>
+                                                <span class="text-primary">10dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Pâtisserie maghrébine fourrée aux dattes ou aux amandes, parfumée à l'eau de fleur d'oranger et trempée dans du miel</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/halwa.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Halwa tunisienne(Maghreb) </span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Une douceur à base de semoule, sucre et beurre, souvent agrémentée de pistaches ou de noisettes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/entrées/malva.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Malva pudding (Afrique du Sud)</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Dessert d'Afrique du Sud, ce pudding moelleux est à base d'abricot,</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- dessert  fin -->
+                         <!-- boisson  debut -->
+                        <div id="tab-6" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/bissap.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Jus de bissap (Sénégal) </span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Jus à base de fleurs d'hibiscus, sucré et rafraîchissant</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/coteivor.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Gnamakoudji (Côte d'Ivoire)</span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Boisson à base de gingembre, de sucre et de citron, très populaire en Afrique de l'Ouest</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/tamar.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Jus de tamarin (Afrique de l'Ouest)</span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Jus sucré et légèrement acide, préparé avec des tamarins frais</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/lassi.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Lassi mangue (Afrique de l'Ouest) </span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Boisson à base de yaourt et de mangue, douce et crémeuse</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/miel.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Tej (Éthiopie) </span>
+                                                <span class="text-primary">25dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Vin de miel épicé traditionnellement servi en Éthiopie</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/cafe.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Café à la cardamome (Afrique de l'Est) </span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Café traditionnel préparé avec des graines de cardamome</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/neriko.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Nerikodo (Côte d'Ivoire)  </span>
+                                                <span class="text-primary">40dt</span>
+                                            </h5>
+                                            <small class="fst-italic"> Boisson à base de lait fermenté et de millet, populaire dans certaines région</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/afriquesud.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Smoothie (Afrique du Sud) </span>
+                                                <span class="text-primary">30dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Mélange sucré de fruits tropicaux frais, parfait pour accompagner un repas léger</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- boisson  fin -->
+
+                        <!-- fruit  debut -->
+                        <div id="tab-5" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/mangue.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Mangue</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Délicieusement sucrée et juteuse, la mangue est riche en vitamines A et C, idéale pour une collation nourrissante et rafraîchissante</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/pasteque.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Pastèque</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Composée à 92 % d’eau, la pastèque est le fruit parfait pour s’hydrater et se rafraîchir lors des journées chaudes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/papaye.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Papaye</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Douce et légèrement crémeuse, la papaye est riche en enzymes qui favorisent la digestion, en plus d’être un régal frais et sucré</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/goyave.avif" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Goyave</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic"> Ce fruit tropical, au goût doux et acidulé, est riche en vitamine C et en fibres, parfait pour renforcer l’immunité tout en se désaltérant</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/ananas.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Ananas</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Juteux et sucré, l'ananas est une explosion de saveurs tropicales, idéal pour les jus ou les desserts rafraîchissants</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/Corossol.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Corossol (Soursop)</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Ce fruit crémeux au goût légèrement acidulé est souvent utilisé pour préparer des boissons glacées et des desserts rafraîchissantse</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/noix-de-coco.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Coco</span>
+                                                <span class="text-primary">10dt</span>
+                                            </h5>
+                                            <small class="fst-italic">L’eau de coco est une boisson naturelle riche en électrolytes, idéale pour se réhydrater rapidement lors de journées chaudes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/Orange-1000.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Orange locale</span>
+                                                <span class="text-primary">10dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Riche en vitamine C et en jus, l’orange locale est parfaite pour les petits-déjeuners ou les pauses rafraîchissantes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/zaban.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Zaban (Pommes sauvages d'Afrique)</span>
+                                                <span class="text-primary">10dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Ce fruit acidulé est consommé frais ou utilisé pour préparer des jus et confitures désaltérants</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/datte.webp" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Datte</span>
+                                                <span class="text-primary">15dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Sucrée et énergétique, la datte est une collation idéale pour les journées chaudes et une source d'énergie rapide</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/figue.jpeg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Cactus (Figue de Barbarie)</span>
+                                                <span class="text-primary">20dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Ce fruit juteux et sucré, également appelé "poire cactus", est idéal pour lutter contre la chaleur</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="../images/menu/boissons/caramboul.jpg" alt="" style="width: 80px; height: 80px; object-fit: cover;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>Carambole (Starfruit)</span>
+                                                <span class="text-primary">10dt</span>
+                                            </h5>
+                                            <small class="fst-italic">Avec son goût légèrement acidulé et sa forme étoilée, la carambole est parfaite pour des salades de fruits rafraîchissantes</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- fruit  fin -->
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu End -->
+        
+
+        <!-- Footer debut -->
+<div class="container-fluid bg-dark text-light footer pt-5  wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">GoûtAfricain</h4>
+                <a class="btn btn-link" href="a_propos.html">À propos de nous</a>
+                <a class="btn btn-link" href="contact.html">Contactez-nous</a>
+                <a class="btn btn-link" href="reservation.html">Réservation</a>
+                <a class="btn btn-link" href="politique_conditions.html#politique">Politique de confidentialité</a>
+                <a class="btn btn-link" href="politique_conditions.html#conditions">Termes & Conditions</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Randa Bakwai, Zinder - Niger </p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+227 96931275</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>GoûtAfricain@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+      
+            <div class="col-lg-3 col-md-6">
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Commentaire</h4>
+                <p>Faites-nous part de vos avis ou propositions</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Commentaire">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Envoyer</button>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-item">
+                    <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Instagram</h4>
+                    <div class="row g-3">
+                        <div class="col-4">
+                            <div class="footer-instagram rounded">
+                                <img src="../images/afrique.png" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="../images/afrique.png" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="col-4">
+                            <div class="footer-instagram rounded">
+                                <img src="../images/afrique1.webp" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="../images/afrique1.webp" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-4">
+                            <div class="footer-instagram rounded">
+                                <img src="../images/ve4.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="../images/ve4.jpg" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-4">
+                            <div class="footer-instagram rounded">
+                                <img src="../images/ve2.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="../images/ve2.jpg" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-4">
+                            <div class="footer-instagram rounded">
+                                <img src="../images/menu/plats_principaux/biryani.jpg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="../images/menu/plats_principaux/biryani.jpg" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="col-4">
+                            <div class="footer-instagram rounded">
+                                <img src="../images/menu/entrées/saladeivoir.jpeg" class="img-fluid w-100" alt="">
+                                <div class="footer-search-icon">
+                                    <a href="../images/menu/entrées/saladeivoir.jpeg" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">GoûtAfricain</a>, Tous droits réservés.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="index.html">Accueil</a>
+                        <a href="#">Cookies</a>
+                        <a href="contact.html">Aide</a>
+                        <a href="index.html#question">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Footer fin -->
+
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" class="img-fluid w-100" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!--  Javascript -->
+    <script src="../js/main.js"></script>
+    <script src="../scripts/connexion.js"></script>
+    <script src="../scripts/script1.js"></script>
+</body>
+
+</html>

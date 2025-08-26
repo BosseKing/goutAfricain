@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Lien CDN pour Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="../styles css/admin.css">
+	<title>Admin - GoûtAfricain</title>
+</head>
+<body>
+
+	<!-- aside debut-->
+
+<section id="sidebar">
+    <a href="adminGouAfricain.html" class="brand">
+        <i class="fas fa-user-shield"></i>
+        <span class="text">GoûtAfricain</span>
+    </a>
+    <ul class="side-menu top">
+        <li class="active" onclick="showSection('dashboard')">
+            <a href="#">
+                <i class='bx bxs-dashboard'></i>
+                <span class="text">Tableau de Bord</span>
+            </a>
+        </li>
+        <li onclick="showSection('products')">
+            <a href="#">
+                <i class='bx bxs-box'></i>
+                <span class="text">Gestion des Menus</span>
+            </a>
+        </li>
+        <li onclick="showSection('orders')">
+            <a href="#">
+                <i class='bx bxs-cart'></i>
+                <span class="text">Gestion des Commandes</span>
+            </a>
+        </li>
+        <li onclick="showSection('customers')">
+            <a href="#">
+                <i class='bx bxs-group'></i>
+                <span class="text">Gestion des Clients</span>
+            </a>
+        </li>
+        <li onclick="showSection('employees')">
+            <a href="#">
+                <i class='bx bxs-user-check'></i>
+                <span class="text">Gestion des Employés</span>
+            </a>
+        </li>
+        <li onclick="showSection('analytics')">
+            <a href="#">
+                <i class='bx bxs-bar-chart-alt-2'></i>
+                <span class="text">Analyse des Ventes</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="side-menu">
+        <li>
+            <a href="#">
+                <i class='bx bxs-cog'></i>
+                <span class="text">Paramètres</span>
+            </a>
+        </li>
+        <li>
+            <a href="acceuil.html" class="logout">
+                <i class='bx bxs-log-out-circle'></i>
+                <span class="text">Déconnexion</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<!--aside fin-->
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu'></i>
+			<a href="#" class="nav-link">Tableau de Bord</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+				</div>
+			</form>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="../images/Snapchat-262776498.jpg">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<!-- Dashboard Section -->
+<div class="dashboard-section section" id="dashboard-section">
+    <h2>Tableau de Bord</h2>
+
+    <!-- Statistiques clés -->
+    <div class="stats">
+        <div class="stat-item">
+            <h3>120</h3>
+            <p>Réservations Récentes</p>
+        </div>
+        <div class="stat-item">
+            <h3>500</h3>
+            <p>Clients Inscrits</p>
+        </div>
+        <div class="stat-item">
+            <h3>12,000 dt</h3>
+            <p>Total des Revenus</p>
+        </div>
+        <div class="stat-item">
+            <h3>8</h3>
+            <p>Plats Épuisés</p>
+        </div>
+        <div class="stat-item">
+            <h3>50</h3>
+            <p>Plats en Stock Critique</p>
+        </div>
+    </div>
+
+    <!-- Graphiques et Performances -->
+    <div class="charts">
+        <div class="chart">
+            <h3>Ventes Hebdomadaires</h3>
+            <canvas id="salesChart"></canvas>
+        </div>
+        <div class="chart">
+            <h3>Répartition des Réservations</h3>
+            <canvas id="reservationsChart"></canvas>
+        </div>
+        <div class="chart">
+            <h3>Performance des Plats</h3>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Alertes de Stock -->
+    <div class="alerts">
+        <h3>Alertes de Stock</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Plat</th>
+                    <th>Stock Restant</th>
+                    <th>Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="product-item"><img src="../images/menu/plats_principaux/biryani.jpg" alt="Plat de Poulet" class="product-image"> Biryani</div></td>
+                    <td>5</td>
+                    <td><span class="status critical">Critique</span></td>
+                </tr>
+                <tr>
+                    <td><div class="product-item"><img src="../images/menu/plats_vegetariens/tuni.webp" alt="Couscous Africain" class="product-image"> Vegetarian couscous</div></td>
+                    <td>12</td>
+                    <td><span class="status low">Bas</span></td>
+                </tr>
+                <tr>
+                    <td><div class="product-item"><img src="../images/menu/entrées/samosa.jpg" alt="Salade Verte" class="product-image"> Samosas</div></td>
+                    <td>20</td>
+                    <td><span class="status normal">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><div class="product-item"><img src="../images/menu/entrées/malva.jpeg" alt="Salade Verte" class="product-image"> Malva pudding</div></td>
+                    <td>20</td>
+                    <td><span class="status normal">Normal</span></td>
+                </tr>
+                <tr>
+                    <td><div class="product-item"><img src="../images/menu/boissons/tamar.jpeg" alt="Plat de Poulet" class="product-image"> Jus de tamarin</div></td>
+                    <td>5</td>
+                    <td><span class="status critical">Critique</span></td>
+                </tr>
+
+                <tr>
+                    <td><div class="product-item"><img src="../images/menu/boissons/pasteque.jpg" alt="Plat de Poulet" class="product-image"> Pastèque</div></td>
+                    <td>5</td>
+                    <td><span class="status critical">Critique</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+
+    <!-- Réservations de Tables -->
+    <div class="table-reservations">
+        <h3>Réservations de Tables</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Date</th>
+                    <th>Heure</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="client-item"><img src="../images/IMG-20230805-WA0010.jpg" alt="profil" class="profile-image"> Mohamed Bazoum</div></td>
+                    <td>29/11/2024</td>
+                    <td>19:00</td>
+                    <td><span class="status reserved">Réservée</span></td>
+                </tr>
+                <tr>
+                    <td><div class="client-item"><img src="../images/IMG-20230731-WA0033_1.jpg" alt="profil" class="profile-image"> Maimouna Salaou</div></td>
+                    <td>01/12/2024</td>
+                    <td>20:00</td>
+                    <td><span class="status available">Disponible</span></td>
+                </tr>
+                <tr>
+                    <td><div class="client-item"><img src="../images/IMG-20240409-WA0030.jpg" alt="profil" class="profile-image"> Nana Fatima Abdou</div></td>
+                    <td>30/11/2024</td>
+                    <td>18:30</td>
+                    <td><span class="status reserved">Réservée</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    
+
+    <!-- Commentaires Clients -->
+    <div class="client-comments">
+        <h3>Commentaires Clients</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Commentaire</th>
+                    <th>Note</th>
+                    <th>Réponse</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="client-item"><img src="../images/IMG-20230805-WA0010.jpg" alt="profil" class="profile-image"> Mohamed Bazoum</div></td>
+                    <td>Excellente expérience, très bon service !</td>
+                    <td>5/5</td>
+                    <td><button class="btn-reply">Répondre</button></td>
+                </tr>
+                <tr>
+                    <td><div class="client-item"><img src="../images/IMG-20230731-WA0033_1.jpg" alt="profil" class="profile-image"> Maimouna Salaou</div></td>
+                    <td>Le plat était délicieux, mais un peu trop salé.</td>
+                    <td>4/5</td>
+                    <td><button class="btn-reply">Répondre</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    
+</div>
+
+            
+
+			<!-- Gestion des menus -->
+			<div class="section hidden" id="products-section">
+				<div class="product-management">
+                    <h2>Gestion des Menus</h2>
+                
+                     <!-- Barre de recherche et ajout -->
+                     <div class="top-bar">
+                        <input type="text" placeholder="Rechercher un produit..." class="search-bar">
+                        <button class="add-product-btn">+ Ajouter un Plat</button>
+                    </div>
+
+        <!-- Tableau des menus -->
+        <table class="menu-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom du Plat</th>
+                    <th>Catégorie</th>
+                    <th>Prix</th>
+                    <th>Disponibilité</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="../images/menu/plats_principaux/jollof.jpg" alt="Salade Verte" class="product-image"> Jollof Rice</td>
+                    <td>Plat Principal</td>
+                    <td>35 DT</td>
+                    <td><span class="status available">Disponible</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><img src="../images/menu/boissons/goyave.avif" alt="Salade Verte" class="product-image"> Goyave</td>
+                    <td>Fruit</td>
+                    <td>20 DT</td>
+                    <td><span class="status inactive">Indisponible</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><img src="../images/menu/boissons/coteivor.jpeg" alt="Salade Verte" class="product-image"> Gnamakoudji</td>
+                    <td>Boisson</td>
+                    <td>30 DT</td>
+                    <td><span class="status available">Disponible</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+                </div>
+                
+                
+			</div>
+
+			<!-- Gestion des clients -->
+			<div class="section hidden" id="customers-section">
+				<div class="product-management">
+                    <h2>Gestion des Clients</h2>
+                    <!-- Barre de recherche et ajout -->
+                    <div class="top-bar">
+                        <input type="text" placeholder="Rechercher un produit..." class="search-bar">
+                        <button class="add-product-btn">+ Ajouter un Client</button>
+                    </div>
+                    <!-- Tableau des clients -->
+        <table class="client-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Anas Hamissou</td>
+                    <td>anas@gmail.com</td>
+                    <td>+216 12345678</td>
+                    <td><span class="status active">Actif</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Maram Sahnoune</td>
+                    <td>maram@gmail.com</td>
+                    <td>+216 87654321</td>
+                    <td><span class="status inactive">Inactif</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Ali Ben Youssef</td>
+                    <td>ali@gmail.com</td>
+                    <td>+216 23456789</td>
+                    <td><span class="status active">Actif</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+                </div>
+                
+			</div>
+
+			<!-- Gestion des Commandes -->
+			<div class="section hidden" id="orders-section">
+				<div class="product-management">
+                    <h2>Gestion des Commandes</h2>
+                    <!-- Barre de recherche et ajout -->
+                    <div class="top-bar">
+                        <input type="text" placeholder="Rechercher un produit..." class="search-bar">
+                        <button class="add-product-btn">+ Ajouter une commande</button>
+                    </div>
+                     <!-- Tableau des commandes -->
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Client</th>
+                    <th>Plats Commandés</th>
+                    <th>Date</th>
+                    <th>Montant (DT)</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#1001</td>
+                    <td>Anas Hamissou</td>
+                    <td>Mafé, Couscous</td>
+                    <td>01/12/2024</td>
+                    <td>55 DT</td>
+                    <td><span class="status pending">En attente</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#1002</td>
+                    <td>Malek Arfaoui</td>
+                    <td>Biryani</td>
+                    <td>30/11/2024</td>
+                    <td>40 DT</td>
+                    <td><span class="status delivered">Livré</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#1003</td>
+                    <td>Abdou Sani</td>
+                    <td>Riz aux légumes </td>
+                    <td>29/11/2024</td>
+                    <td>22 DT</td>
+                    <td><span class="status cancelled">Annulé</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+                </div>
+                
+                
+			</div>
+
+
+            <!-- Gestion des Employés -->
+<div class="section hidden" id="employees-section">
+    <div class="employee-management">
+        <h2 style="color: #FEA116;">Gestion des Employés</h2>
+
+       <!-- Barre de recherche et ajout -->
+       <div class="top-bar">
+        <input type="text" placeholder="Rechercher un produit..." class="search-bar">
+        <button class="add-product-btn">+ Ajouter un Employé</button>
+    </div>
+
+        <!-- Tableau des employés -->
+        <table class="employee-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Poste</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#001</td>
+                    <td>Ahmed Ben Ali</td>
+                    <td>ahmed@gmail.com</td>
+                    <td>Cuisinier</td>
+                    <td><span class="status active">Actif</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#002</td>
+                    <td>Sofia Khelifi</td>
+                    <td>sofia@gmail.com</td>
+                    <td>Serveuse</td>
+                    <td><span class="status active">Actif</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>#003</td>
+                    <td>Mohamed Fathi</td>
+                    <td>mohamed@gmail.com</td>
+                    <td>Vendeur</td>
+                    <td><span class="status inactive">Inactif</span></td>
+                    <td>
+                        <button class="edit-btn">Modifier</button>
+                        <button class="delete-btn">Supprimer</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Analyse des Ventes -->
+<div class="section hidden" id="analytics-section">
+    <div class="sales-analysis">
+        <h2 style="color: #FEA116;">Analyse des Ventes</h2>
+
+        <div class="stats">
+            <!-- Statistiques des ventes -->
+            <div class="stat-card">
+                <h3>Total des Ventes</h3>
+                <p class="value">25,000 DT</p>
+                <p class="info">+15% par rapport au mois dernier</p>
+            </div>
+            <div class="stat-card">
+                <h3>Plats Commandés</h3>
+                <p class="value">1,200 Plats</p>
+                <p class="info">+10% par rapport au mois dernier</p>
+            </div>
+            <div class="stat-card">
+                <h3>Revenu Moyen par Commande</h3>
+                <p class="value">80 DT</p>
+                <p class="info">Stable</p>
+            </div>
+        </div>
+
+        <div class="charts">
+            <!-- Graphiques des ventes -->
+            <div class="chart">
+                <h3>Ventes Mensuelles</h3>
+                <div class="chart-container">
+                    <canvas id="monthlySalesChart"></canvas>
+                </div>
+            </div>
+            <div class="chart">
+                <h3>Répartition par Catégorie de Plats</h3>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+            <div class="chart">
+                <h3>Top 5 des Plats les Plus Vendus</h3>
+                <div class="chart-container">
+                    <canvas id="topDishesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+	<script src="../scripts js/admin.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const ctx = document.getElementById('monthlySalesChart').getContext('2d');
+            const data = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Ventes Mensuelles (DT)',
+                    data: [1500, 2000, 1800, 2200, 2400, 2500, 2700, 3000, 2800, 3200, 3100, 3500],
+                    backgroundColor: 'rgba(234, 31, 51, 0.2)',
+                    borderColor: '#ea1f33',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }]
+            };
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: '#333'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: '#333'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#333'
+                            }
+                        }
+                    }
+                }
+            };
+
+            new Chart(ctx, config);
+        });
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById('categoryChart').getContext('2d');
+        const data = {
+            labels: ['Plats Principaux', 'Plats végétariens', 'Entrées', 'Desserts', 'Fruits' , 'Boissons'],
+            datasets: [{
+                label: 'Répartition par Catégories',
+                data: [50, 40, 25, 20, 20],
+                backgroundColor: [
+                    '#ea1f33',
+                    '#f7931e',
+                    '#4caf50',
+                    '#2196f3',
+                    '#0F172B',
+                    '#9c27b0'
+                ],
+                borderColor: '#fff', 
+                borderWidth: 2
+            }]
+        };
+
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            color: '#333'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(ctx, config);
+    });
+</script>
+
+<script>
+    var ctx = document.getElementById('salesChart').getContext('2d');
+var salesChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+        datasets: [{
+            label: 'Ventes Hebdomadaires',
+            data: [12, 19, 10, 11, 3, 15, 20],
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+<script>
+// Données pour la répartition des réservations
+const reservationsData = {
+    labels: ['Réservées', 'Disponibles'],
+    datasets: [{
+        data: [50, 20],
+        backgroundColor: ['#FEA116', '#0F172B'],
+        hoverOffset: 4
+    }]
+};
+
+// Configuration du graphique pour la répartition des réservations
+const reservationsConfig = {
+    type: 'pie',
+    data: reservationsData,
+};
+
+// Création du graphique
+const reservationsChart = new Chart(
+    document.getElementById('reservationsChart'),
+    reservationsConfig
+);
+
+// Données pour la performance des plats
+const performanceData = {
+    labels: ['Jus de bissap', 'Gâteau au manioc', 'Riz au poisson' , 'Yam frit' ,'Soupe de poisson','Papaye'],
+    datasets: [{
+        label: 'Performance des Plats',
+        data: [90, 80, 70, 50, 40,60], 
+        backgroundColor: ['#FEA116', '#0F172B', '#F1F8FF'],
+        borderColor: ['#0F172B', '#FEA116', '#0F172B'],
+        borderWidth: 1
+    }]
+};
+
+// Configuration du graphique pour la performance des plats
+const performanceConfig = {
+    type: 'bar',
+    data: performanceData,
+};
+
+// Création du graphique pour la performance des plats
+const performanceChart = new Chart(
+    document.getElementById('performanceChart'),
+    performanceConfig
+);
+
+
+
+// Données des Top 5 des Plats les Plus Vendus
+const data = {
+    labels: ['Poulet Yassa', 'Makroudh', 'Fried', 'Yam frit', 'Thiéboudienne'], 
+    datasets: [{
+        label: 'Nombre de Ventes',
+        data: [120, 100, 80, 60, 50], 
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)', 
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)' 
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)', 
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)', 
+            'rgba(75, 192, 192, 1)', 
+            'rgba(153, 102, 255, 1)' 
+        ],
+        borderWidth: 1
+    }]
+};
+
+// Configuration du graphique
+const config = {
+    type: 'bar',
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            tooltip: {
+                enabled: true
+            }
+        },
+        scales: {
+            x: {
+                beginAtZero: true
+            },
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+};
+
+// Création du graphique dans l'élément canvas
+const topDishesChart = new Chart(
+    document.getElementById('topDishesChart'), 
+    config
+);
+</script>
+
+
+	<style>
+		
+		.hidden {
+			display: none;
+		}
+	</style>
+</body>
+</html>

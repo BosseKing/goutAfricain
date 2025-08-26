@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GoûtAfricain</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+
+    <!-- Bibliotheques Stylesheet -->
+     <link rel="stylesheet" href="../lib/animate/animate.min.css">
+     <link rel="stylesheet" href="../lib/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
+    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!--  Bootstrap  -->
+   
+
+    <!--  css -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style1.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles css/panier.css">
+    <style>
+        .active{
+            background: var(--primary) !important;
+            color: var(--light) !important;
+        }
+
+        .hidden,.d-none{
+            display: none;
+        }
+        
+    </style>
+
+    
+</head>
+
+<body>
+    <div class="container-fluid bg-white p-0">
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-primary m-0"><img src="../images/logo-removebg-preview.png" alt="Logo">GoûtAfricain</h1>
+                    
+                </a>
+
+                <div class="les-btn">
+                    <a  title="Mon panier" href="panier.html" class="btn-nav pani" id="open-panier"  ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
+                   
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Acceuil</a>
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <a href="reservation.html" class="nav-item nav-link">Réservation</a>
+                        <a href="commande.html" class="nav-item nav-link">Commandez en ligne</a>
+                        <a href="a_propos.html" class="nav-item nav-link">À propos</a>
+                    </div>
+                    <a href="#" title="Rechercher" class="btn-nav search" id="openSearchModal">
+                        <i class="bi bi-search" style="font-size: 24px;"></i>
+                    </a>
+                    <a href="connexion-inscription.html" title="Connexion" class="btn-nav login">
+                        <i class="bi bi-person" style="font-size: 26px;"></i>
+                    </a>
+                    <a href="mesFavoris.html" title="Favoris" class="btn-nav">
+                        <i class="bi bi-heart" style="font-size: 24px; margin-top: 6px;"></i>
+                    </a>
+                    <a  title="Mon panier" href="#" class="btn-nav app active" id="open-panier" ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
+                </div>
+              
+            </nav>
+
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Modal Bootstrap -->
+        <div class="modal fade search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="searchModalLabel">Rechercher sur <span class="section-title ff-secondary text-start text-primary fw-normal">GoûtAfricain</span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="searchInput" placeholder="Tapez votre recherche...">
+                        <button class="btn-search" id="searchButton">Rechercher</button>
+                    </div>
+                    <div id="searchResults"></div>
+                </div>
+            </div>
+          </div>
+  
+
+  
+
+
+        <main>
+            <!-- Section Panier -->
+            <section id="panier-section">
+                <h1>Mon Panier</h1>
+                <table id="panier-table">
+                    <thead>
+                        <tr>
+                            <th>Plat</th>
+                            <th>Prix Unitaire</th>
+                            <th>Quantité</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="panier">
+                        <!-- Les éléments du panier seront injectés ici dynamiquement -->
+                    </tbody>
+                </table>
+                <p id="total">Total : 0.00 DT</p>
+        
+                <div class="panier-actions">
+                    <button class="btn-continuer" onclick="window.history.back();"><i class="bi bi-caret-left-fill"></i> Continuer mes achats</button>
+                    <button id="btnViderPanier" class="btn-vide " onclick="demanderConfirmationViderPanier()"><i class="bi bi-trash" style="margin-right: 5px;"></i> Vider le panier</button>
+                    <button id="btnCommander" class="btn-commander"><i class="bi bi-bag-check-fill"></i> Commander</button>
+                </div>
+                <div id="messageAnnulation" style="display:none;" class="alert alert-info"></div>
+            </section>
+        
+             <div class="passerCommande">
+                    <!-- Section de Commande -->
+                <section id="commande-section" class="hidden">
+                    <div class="card p-4 shadow">
+                        <h1>Passez votre commande</h1>
+                        <form id="commande-form">
+                            <div class="mb-3">
+                                <label class="form-label">Nom Complet</label>
+                                <input type="text" class="form-control" id="nom-complet" required>
+                                <span class="error-message" id="nom-complet-error">Veuillez entrer votre nom complet.</span>
+                            </div>                            
+                            <div class="mb-3">
+                                <label class="form-label">Adresse de Livraison</label>
+                                <input type="text" class="form-control" id="adresse">
+                                <span class="error-message" id="adresse-error">Veuillez entrer une adresse valide.</span>
+                            </div>
+                            <div class="mb-3 flex-row">
+                                <div class="form-group">
+                                    <label class="form-label">Mode de Contact</label>
+                                    <select class="form-select" id="contact-type">
+                                        <option value="tel" selected>Téléphone</option>
+                                        <option value="email">Email</option>
+                                    </select>
+                                </div>
+                                <div class="form-group" id="tel-field">
+                                    <label class="form-label">Numéro de Téléphone</label>
+                                    <input type="tel" class="form-control" id="telephone">
+                                    <span class="error-message" id="telephone-error">Veuillez entrer un numéro valide.</span>
+                                </div>
+                                <div class="form-group d-none" id="email-field">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email">
+                                    <span class="error-message" id="email-error">Veuillez entrer un email valide.</span>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Mode de Paiement</label>
+                                <select class="form-select" id="mode-paiement">
+                                    <option value="livraison">Paiement à la livraison</option>
+                                    <option value="carte">Carte Bancaire</option>
+                                </select>
+                            </div>
+                            <div id="paiement-section" class="hidden">
+                                <h5>Informations de paiement</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Numéro de Carte</label>
+                                    <input type="text" class="form-control" id="numero-carte">
+                                    <span class="error-message" id="numero-carte-error">Le numéro doit contenir 16 chiffres.</span>
+                                </div>
+                                <div class="mb-3 flex-row">
+                                    <div class="form-group">
+                                        <label class="form-label">Date d'expiration</label>
+                                        <input type="text" class="form-control" id="expiration" placeholder="MM/AA">
+                                        <span class="error-message" id="expiration-error">Format MM/AA requis.</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv">
+                                        <span class="error-message" id="cvv-error">Le CVV doit contenir 3 chiffres.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" id="prev1" class="btn btn-secondary">Précédent</button>
+                            <button type="button" id="next1" class="btn btn-primary">Valider</button>
+                        </form>
+                    </div>
+                </section>
+            
+                <!-- Section de Confirmation -->
+                <section id="confirmation-section" class="hidden mt-4">
+                    <div class="alert alert-success text-center">
+                        Commande confirmée ! Un email/SMS a été envoyé.
+                    </div>
+                    <a href="#">Je n'ai pas reçu l'email/SMS</a>
+
+                    <div class="card mt-3 p-4">
+                        <div id="facturePdf">
+                           <div class="lestitres">
+                            <div>
+                                <h1 class="text-primary m-0"><img src="../images/logo-removebg-preview.png" alt="Logo">GoûtAfricain</h1>
+                                <h1><i class="bi bi-cup-straw me-2"></i> Bon Appétit ! <i class="bi bi-cup-straw ms-2"></i></h1>
+                            </div>
+                            <h2 class="text-center mb-4">Facture</h2>
+                           </div>
+                    
+                        
+                        <div id="facture-header" class="mb-4">
+                            <div id="facture-header" class="mb-4">
+                                <p><strong>Numéro de facture:</strong> <span id="num-facture"></span></p>
+                                <p><strong>Nom du client:</strong> <span id="nom-client"></span></p>
+                                <p><strong>Adresse:</strong> <span id="adresse-client"></span></p>
+                                <p><strong>Date:</strong> <span id="date-facture"></span></p>
+                                
+                            </div>                            
+                        </div>
+                    
+                        <div id="facture-content">
+                            <!-- Table des produits -->
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Produit</th>
+                                        <th>Prix (DT)</th>
+                                        <th>Quantité</th>
+                                        <th>Total (DT)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="facture-body">
+                                    <!-- Contenu ajouté dynamiquement -->
+                                </tbody>
+                            </table>
+                    
+                            <!-- Section du sous-total et frais -->
+                            <div class="d-flex  fw-bold">
+                                <p>Sous-total : </p>
+                                <p style="margin-left: 10px;"><span id="sous-total"></span> DT</p>
+                            </div>
+                            <div class="d-flex  fw-bold">
+                                <p>Frais de livraison : </p>
+                                <p style="margin-left: 10px;">3.00 DT</p>
+                            </div>
+                            <p><strong>Mode de Paiement:</strong> <span id="mode-paiement-facture"></span></p>
+                    
+                            <!-- Total payé avec un style différent -->
+                            <div class="d-flex justify-content-between fw-bold fs-5 text-success">
+                                <p id="total-commande-label"></p>
+                                <p><span id="total-commande"></span></p>
+                            </div>
+                            <p class="fs-5 text-muted">Merci de votre commande ! Nous espérons que vous apprécierez votre repas!</p>
+                        </div>
+                        </div>
+                    
+                        <!-- Bouton de téléchargement de la facture -->
+                        <button id="genererPdf" class="btn-download">
+                            <i class="fas fa-download"></i> Télécharger la facture en PDF
+                        </button>
+                    </div>
+                    
+                    
+
+                  <div class="buttonAction">
+                    <button class="btn btn-primary w-100 mt-3" id="retourPanier"><i class="bi bi-caret-left-fill"></i> Retour au panier</button>
+                    <button class="btn btn-primary w-100 mt-3 " id="annulerCommande"> Annuler la commande</button>
+                    <div id="countdown"></div>
+                  </div>
+                </section>
+             </div>
+        </main>
+
+
+        
+
+
+                <!-- Modal de confirmation -->
+        <div class="modal fade" id="confirmViderPanier" tabindex="-1" aria-labelledby="confirmViderPanierLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="confirmViderPanierLabel">Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                Êtes-vous sûr de vouloir vider votre panier ? Cette action est irréversible.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger" id="confirmVider">Oui, Supprimer</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+               
+            <!-- Modal Bootstrap pour panier vide -->
+        <div class="modal fade" id="confirmPanierVide" tabindex="-1" aria-labelledby="confirmPanierVideLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmPanierVideLabel">Panier Vide</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Votre panier est vide. Veuillez ajouter des plats avant de commander.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='commande.html'">Ajouter des plats</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <!-- Modal de Validation avant la Confirmation -->
+        <div class="modal fade" id="confirmValidationModal" tabindex="-1" aria-labelledby="confirmValidationLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmValidationLabel">Validation de Commande</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body">
+                        Une fois validée, votre commande ne pourra être annulée que dans les 3 minutes suivant la validation. <br> 
+                        Êtes-vous sûr de vouloir valider cette commande ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="button" class="btn btn-primary" id="confirmValidation">Oui, valider</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <!-- Modal de confirmation -->
+        <div class="modal fade" id="confirmRetourPanierModal" tabindex="-1" aria-labelledby="confirmRetourPanierModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="confirmRetourPanierModalLabel">Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Une fois retourné au panier, vous ne pourrez plus revenir en arrière. Êtes-vous sûr de vouloir continuer ?
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger" id="confirmerRetour">Oui, retourner au panier</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+                <!-- Modal de Confirmation d'Annulation -->
+        <div class="modal fade" id="confirmAnnulationModal" tabindex="-1" aria-labelledby="confirmAnnulationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmAnnulationModalLabel">Confirmer l'annulation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Êtes-vous sûr de vouloir annuler votre commande ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-danger" id="confirmAnnulation">Annuler la commande</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+  
+
+
+
+
+       
+
+
+
+        
+        
+
+                <!-- Footer debut -->
+        <div class="container-fluid bg-dark text-light footer pt-5  wow fadeIn" data-wow-delay="0.1s">
+            <div class="container-fluid py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">GoûtAfricain</h4>
+                        <a class="btn btn-link" href="a_propos.html">À propos de nous</a>
+                        <a class="btn btn-link" href="contact.html">Contactez-nous</a>
+                        <a class="btn btn-link" href="reservation.html">Réservation</a>
+                        <a class="btn btn-link" href="politique_conditions.html#politique">Politique de confidentialité</a>
+                        <a class="btn btn-link" href="politique_conditions.html#conditions">Termes & Conditions</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Randa Bakwai, Zinder - Niger </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+227 96931275</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>GoûtAfricain@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Commentaire</h4>
+                        <p>Faites-nous part de vos avis ou propositions</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Commentaire">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Envoyer</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Instagram</h4>
+                            <div class="row g-3">
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/afrique.png" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/afrique.png" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/afrique1.webp" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/afrique1.webp" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/ve4.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/ve4.jpg" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/ve2.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/ve2.jpg" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                                <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/menu/plats_principaux/biryani.jpg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/menu/plats_principaux/biryani.jpg" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-4">
+                                    <div class="footer-instagram rounded">
+                                        <img src="../images/menu/entrées/saladeivoir.jpeg" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="../images/menu/entrées/saladeivoir.jpeg" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">GoûtAfricain</a>, Tous droits réservés.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="index.html">Accueil</a>
+                                <a href="#">Cookies</a>
+                                <a href="contact.html">Aide</a>
+                                <a href="#question">FAQ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer fin -->
+
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img id="modalImage" src="" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                <!-- Back to Top -->
+                <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+
+    <!--  Javascript -->
+    <script src="../js/main.js"></script>
+    <script src="../scripts/connexion.js"></script>
+    <script src="../scripts/script1.js"></script>
+    <script src="../scripts/panier.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+
+
+
+</body>
+
+</html>

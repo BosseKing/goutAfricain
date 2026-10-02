@@ -1,311 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>GoûtAfricain || Réservation</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Réservation — GoûtAfricain</title>
+    <meta name="description" content="Réservez votre table chez GoûtAfricain en ligne : date, heure, nombre de convives et acompte sécurisé.">
+    <link rel="icon" type="image/png" href="images/logo-removebg-preview.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-
-    <!-- Bibliotheques Stylesheet -->
-     <link rel="stylesheet" href="../lib/animate/animate.min.css">
-     <link rel="stylesheet" href="../lib/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
-
-    <!--  Bootstrap  -->
-   
-
-    <!--  css -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/style1.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
+<body data-page="reservation">
 
-<body>
-    <div class="container-fluid bg-white p-0">
-
-
-        <!-- Navbar debut -->
-        <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><img src="../images/logo-removebg-preview.png" alt="Logo">GoûtAfricain</h1>
-                    
-                </a>
-
-                <div class="les-btn">
-                    <a  title="Mon panier" href="panier.html" class="btn-nav pani" id="open-panier"  ><i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span></a>
-                   
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="fa fa-bars"></span>
-                    </button>
-                </div>
-                
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="index.html" class="nav-item nav-link ">Acceuil</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
-                        <a href="reservation.html" class="nav-item nav-link active">Réservation</a>
-                        <a href="commande.html" class="nav-item nav-link">Commandez en ligne</a>
-                        <a href="a_propos.html" class="nav-item nav-link">À propos</a>
-                    </div>
-                    <a href="#" title="Rechercher" class="btn-nav search" id="openSearchModal">
-                        <i class="bi bi-search" style="font-size: 24px;"></i>
-                    </a>
-                    <a href="connexion-inscription.html" title="Connexion" class="btn-nav login">
-                        <i class="bi bi-person" style="font-size: 26px;"></i>
-                    </a>
-                    <a href="mesFavoris.html" title="Favoris" class="btn-nav">
-                        <i class="bi bi-heart" style="font-size: 24px; margin-top: 6px;"></i>
-                    </a>
-                    <a  title="Mon panier" href="panier.html" class="btn-nav app" id="open-panier" >
-                        <i class="bi bi-bag" style="font-size: 24px;"></i><span id="cart-badge" class="cart-badge badge badge-pill badge-danger"></span>
-                    </a>
-                </div>
-              
-            </nav>
-
-
-           
-        </div>
-        <!-- Navbar fin -->
-
-         <!-- Modal Bootstrap -->
-         <div class="modal fade search-modal" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-fullscreen-sm-down">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="searchModalLabel">Rechercher sur <span class="section-title ff-secondary text-start text-primary fw-normal">GoûtAfricain</span></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="text" id="searchInput" placeholder="Tapez votre recherche...">
-                        <button class="btn-search" id="searchButton">Rechercher</button>
-                    </div>
-                    <div id="searchResults"></div>
-                </div>
-            </div>
-          </div>
-  
-
-
-      <!-- Section Réservation -->
-    <section id="reservation">
+<main>
+    <section class="page-hero page-hero--sm">
+        <div class="page-hero__bg" style="background-image:url(images/reservation.jpg)"></div>
         <div class="container">
-            <h5 class="section-title ff-secondary text-center text-primary fw-normal wow fadeInUp" data-wow-delay="0.1s">Réservation</h5>
-            <h1 class="title wow fadeInUp" data-wow-delay="0.1s">Réservez votre table en ligne chez GoûtAfricain</h1>
-            
-            <form class="wow fadeInUp" data-wow-delay="0.1s">
-                <div class="form-grid" >
-                    <div class="form-group">
-                        <label for="name">Nom complet</label>
-                        <input type="text" id="name" placeholder="Votre Nom complet" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="Votre E-mail" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date">Date de réservation</label>
-                        <input type="date" id="date" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="time">Heure de réservation</label>
-                        <input type="time" id="time" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Numéro de Téléphone</label>
-                        <input type="tel" id="phone" placeholder="Votre Numéro" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="persons">Nombre de personnes</label>
-                        <select id="persons" required>
-                            <option value="1">1 Personne</option>
-                            <option value="2">2 Personnes</option>
-                            <option value="3">3 Personnes</option>
-                            <option value="4">4 Personnes</option>
-                            <option value="5">5 Personnes</option>
-                            <option value="6">6 Personnes</option>
-                            <option value="7">7 Personnes</option>
-                            <option value="8">8 Personnes</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group full-width">
-                    <label for="message">Demande spéciale(facultatif)</label>
-                    <textarea id="message" placeholder="Votre Demande"></textarea>
-                </div>
-
-                <button type="submit" class="btn-reserve">Réservez maintenant</button>
-            </form>
+            <span class="eyebrow" data-reveal="up">Réservation</span>
+            <h1 class="split">Réservez votre table</h1>
+            <div class="breadcrumb" data-reveal="up"><a href="index.html">Accueil</a>/<span>Réservation</span></div>
         </div>
     </section>
 
-        
-       <!-- Footer debut -->
-<div class="container-fluid bg-dark text-light footer pt-5  wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">GoûtAfricain</h4>
-                <a class="btn btn-link" href="a_propos.html">À propos de nous</a>
-                <a class="btn btn-link" href="contact.html">Contactez-nous</a>
-                <a class="btn btn-link" href="reservation.html">Réservation</a>
-                <a class="btn btn-link" href="politique_conditions.html#politique">Politique de confidentialité</a>
-                <a class="btn btn-link" href="politique_conditions.html#conditions">Termes & Conditions</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Randa Bakwai, Zinder - Niger </p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+227 96931275</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>GoûtAfricain@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+    <section class="section section--light section--tight">
+        <div class="container booking">
+
+            <!-- Récapitulatif -->
+            <aside class="summary" data-reveal="left">
+                <div class="summary__img"><img src="images/reserve.jpeg" alt=""></div>
+                <div class="summary__body">
+                    <h3>Votre réservation</h3>
+                    <div class="summary__row"><span><i class="far fa-calendar"></i>Date</span><span data-sum="date">—</span></div>
+                    <div class="summary__row"><span><i class="far fa-clock"></i>Heure</span><span data-sum="time">—</span></div>
+                    <div class="summary__row"><span><i class="fa fa-user-friends"></i>Convives</span><span data-sum="guests">2 personnes</span></div>
+                    <div class="summary__row"><span><i class="fa fa-chair"></i>Espace</span><span data-sum="zone">Salle principale</span></div>
+                    <div class="summary__row"><span><i class="far fa-user"></i>Nom</span><span data-sum="name">—</span></div>
+                    <div class="summary__total"><span>Acompte</span><strong data-sum="deposit">20 dt</strong></div>
+                    <p class="summary__note"><i class="fa fa-info-circle"></i> 10 dt par personne, entièrement déduits de votre addition.</p>
                 </div>
-            </div>
-      
-            <div class="col-lg-3 col-md-6">
-                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Commentaire</h4>
-                <p>Faites-nous part de vos avis ou propositions</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Commentaire">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Envoyer</button>
+            </aside>
+
+            <!-- Étapes -->
+            <form class="wizard" id="booking" novalidate data-reveal="right">
+                <div class="progress">
+                    <div class="progress__fill"></div>
+                    <div class="progress__step is-active"><b>1</b><small>Table</small></div>
+                    <div class="progress__step"><b>2</b><small>Coordonnées</small></div>
+                    <div class="progress__step"><b>3</b><small>Paiement</small></div>
+                    <div class="progress__step"><b><i class="fa fa-check"></i></b><small>Confirmation</small></div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-item">
-                    <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Instagram</h4>
-                    <div class="row g-3">
-                        <div class="col-4">
-                            <div class="footer-instagram rounded">
-                                <img src="../images/afrique.png" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="../images/afrique.png" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                </div>
+
+                <!-- 1. Table -->
+                <div class="panel is-active">
+                    <h2>Choisissez votre table</h2>
+                    <p>Date, nombre de convives et créneau.</p>
+
+                    <div class="field-group">
+                        <span class="label">Date</span>
+                        <div class="days" id="days"></div>
+                    </div>
+
+                    <div class="field-row">
+                        <div class="field-group">
+                            <span class="label">Personnes</span>
+                            <div class="stepper">
+                                <button type="button" data-guests="-1" aria-label="Moins"><i class="fa fa-minus"></i></button>
+                                <output id="guests">2 personnes</output>
+                                <button type="button" data-guests="1" aria-label="Plus"><i class="fa fa-plus"></i></button>
                             </div>
-                       </div>
-                       <div class="col-4">
-                            <div class="footer-instagram rounded">
-                                <img src="../images/afrique1.webp" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="../images/afrique1.webp" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                </div>
-                            </div>
-                       </div>
-                        <div class="col-4">
-                            <div class="footer-instagram rounded">
-                                <img src="../images/ve4.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="../images/ve4.jpg" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                </div>
-                            </div>
-                       </div>
-                        <div class="col-4">
-                            <div class="footer-instagram rounded">
-                                <img src="../images/ve2.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="../images/ve2.jpg" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                </div>
-                            </div>
-                       </div>
-                        <div class="col-4">
-                            <div class="footer-instagram rounded">
-                                <img src="../images/menu/plats_principaux/biryani.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="../images/menu/plats_principaux/biryani.jpg" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                </div>
-                            </div>
-                       </div>
-                       <div class="col-4">
-                            <div class="footer-instagram rounded">
-                                <img src="../images/menu/entrées/saladeivoir.jpeg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="../images/menu/entrées/saladeivoir.jpeg" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                </div>
+                        </div>
+
+                        <div class="field-group">
+                            <span class="label">Espace</span>
+                            <div class="choices">
+                                <div class="choice"><input type="radio" name="zone" id="z1" value="Salle principale" checked><label for="z1"><i class="fa fa-utensils"></i><span><strong>Salle</strong></span></label></div>
+                                <div class="choice"><input type="radio" name="zone" id="z2" value="Terrasse"><label for="z2"><i class="fa fa-sun"></i><span><strong>Terrasse</strong></span></label></div>
+                                <div class="choice"><input type="radio" name="zone" id="z3" value="Salon privé"><label for="z3"><i class="fa fa-glass-cheers"></i><span><strong>Salon privé</strong></span></label></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">GoûtAfricain</a>, Tous droits réservés.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                        <a href="index.html">Accueil</a>
-                        <a href="#">Cookies</a>
-                        <a href="contact.html">Aide</a>
-                        <a href="index.html#question">FAQ</a>
+
+                    <div class="field-group">
+                        <span class="label">Heure</span>
+                        <div class="slots" id="slots"></div>
+                    </div>
+
+                    <div class="wizard__actions">
+                        <button type="button" class="btn" data-next>Continuer <i class="fa fa-arrow-right"></i></button>
                     </div>
                 </div>
-            </div>
+
+                <!-- 2. Coordonnées -->
+                <div class="panel">
+                    <h2>Vos coordonnées</h2>
+                    <p>Pour vous envoyer la confirmation et vous joindre si besoin.</p>
+
+                    <div class="form-grid">
+                        <div class="field full">
+                            <input id="name" name="name" placeholder=" " autocomplete="name" required>
+                            <label for="name">Nom complet</label>
+                            <span class="error">Merci d'indiquer votre nom.</span>
+                        </div>
+                        <div class="field">
+                            <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required>
+                            <label for="email">E-mail</label>
+                            <span class="error">Adresse e-mail invalide.</span>
+                        </div>
+                        <div class="field">
+                            <input id="phone" name="phone" type="tel" placeholder=" " autocomplete="tel" required>
+                            <label for="phone">Téléphone</label>
+                            <span class="error">Numéro de téléphone invalide.</span>
+                        </div>
+                        <div class="field full">
+                            <select id="occasion" name="occasion">
+                                <option>Aucune occasion particulière</option>
+                                <option>Anniversaire</option>
+                                <option>Dîner romantique</option>
+                                <option>Repas d'affaires</option>
+                                <option>Fête de famille</option>
+                            </select>
+                            <label for="occasion">Occasion</label>
+                        </div>
+                        <div class="field full">
+                            <textarea id="message" name="message" placeholder=" "></textarea>
+                            <label for="message">Demande spéciale (facultatif)</label>
+                        </div>
+                    </div>
+
+                    <div class="wizard__actions">
+                        <button type="button" class="link-back" data-prev><i class="fa fa-arrow-left"></i> Retour</button>
+                        <button type="button" class="btn" data-next>Passer au paiement <i class="fa fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- 3. Paiement -->
+                <div class="panel">
+                    <h2>Paiement de l'acompte</h2>
+                    <p>Montant à régler : <strong data-sum="deposit">20 dt</strong>, déduit de votre addition au restaurant.</p>
+
+                    <div class="choices pay-methods">
+                        <div class="choice"><input type="radio" name="method" id="m1" value="card" checked><label for="m1"><i class="far fa-credit-card"></i><span><strong>Carte bancaire</strong><small>Visa, Mastercard</small></span></label></div>
+                        <div class="choice"><input type="radio" name="method" id="m2" value="momo"><label for="m2"><i class="fa fa-mobile-alt"></i><span><strong>Mobile money</strong><small>Airtel, Moov, Zamani</small></span></label></div>
+                    </div>
+
+                    <div class="pay-layout" id="pay-card">
+                        <div class="card3d" id="card3d">
+                            <div class="card3d__inner">
+                                <div class="card3d__face">
+                                    <div class="card3d__top"><div class="card3d__chip"></div><span class="card3d__brand">GoûtAfricain</span></div>
+                                    <div class="card3d__number" id="cv-number">•••• •••• •••• ••••</div>
+                                    <div class="card3d__bottom">
+                                        <div><small>Titulaire</small><b id="cv-name">VOTRE NOM</b></div>
+                                        <div><small>Expire</small><b id="cv-exp">MM/AA</b></div>
+                                    </div>
+                                </div>
+                                <div class="card3d__face card3d__back">
+                                    <div class="card3d__stripe"></div>
+                                    <div class="card3d__cvv" id="cv-cvv">•••</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="field full">
+                                <input id="card-number" inputmode="numeric" autocomplete="cc-number" placeholder=" " maxlength="19">
+                                <label for="card-number">Numéro de carte</label>
+                                <span class="error">Numéro de carte invalide.</span>
+                            </div>
+                            <div class="field full">
+                                <input id="card-name" autocomplete="cc-name" placeholder=" ">
+                                <label for="card-name">Nom sur la carte</label>
+                                <span class="error">Nom requis.</span>
+                            </div>
+                            <div class="field">
+                                <input id="card-exp" inputmode="numeric" autocomplete="cc-exp" placeholder=" " maxlength="5">
+                                <label for="card-exp">Expiration (MM/AA)</label>
+                                <span class="error">Date invalide.</span>
+                            </div>
+                            <div class="field">
+                                <input id="card-cvv" inputmode="numeric" autocomplete="cc-csc" placeholder=" " maxlength="4">
+                                <label for="card-cvv">CVV</label>
+                                <span class="error">CVV invalide.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pay-layout" id="pay-momo" hidden>
+                        <div class="momo">
+                            <i class="fa fa-mobile-alt"></i>
+                            <strong>Validez sur votre téléphone</strong>
+                            <small>Vous recevrez une demande de confirmation après avoir cliqué sur « Payer ».</small>
+                        </div>
+                        <div class="form-grid">
+                            <div class="field full">
+                                <select id="momo-op">
+                                    <option>Airtel Money</option>
+                                    <option>Moov Money</option>
+                                    <option>Zamani Cash</option>
+                                </select>
+                                <label for="momo-op">Opérateur</label>
+                            </div>
+                            <div class="field full">
+                                <input id="momo-phone" type="tel" placeholder=" ">
+                                <label for="momo-phone">Numéro mobile money</label>
+                                <span class="error">Numéro invalide.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label class="check" id="terms-wrap">
+                        <input type="checkbox" id="terms">
+                        <span>J'accepte les <a href="politique_conditions.html#conditions" target="_blank">conditions de réservation</a> : acompte remboursable en cas d'annulation au moins 24 h à l'avance.</span>
+                    </label>
+                    <p class="secure"><i class="fa fa-lock"></i>Paiement chiffré et sécurisé</p>
+
+                    <div class="wizard__actions">
+                        <button type="button" class="link-back" data-prev><i class="fa fa-arrow-left"></i> Retour</button>
+                        <button type="submit" class="btn" id="pay-btn">Payer <span data-sum="deposit">20 dt</span></button>
+                    </div>
+                </div>
+
+                <!-- 4. Confirmation -->
+                <div class="panel" id="confirmation"></div>
+            </form>
         </div>
-    </div>
-  </div>
-  <!-- Footer fin -->
+    </section>
+</main>
 
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img id="modalImage" src="" class="img-fluid w-100" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/wow/wow.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/counterup/counterup.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/tempusdominus/js/moment.min.js"></script>
-    <script src="../lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!--  Javascript -->
-    <script src="../js/main.js"></script>
-    <script src="../scripts/connexion.js"></script>
-    <script src="../scripts/script1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/reservation.js"></script>
 </body>
-
 </html>
